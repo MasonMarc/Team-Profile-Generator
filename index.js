@@ -12,16 +12,16 @@ let empChoice = () => {
             type: 'list',
             message: 'Please Select Employee type',
             choices: ['Manager', 'Engineer', 'Intern'],
-            name: 'emp'
+            name: 'type'
         }])
         .then((answer) => {
-            if (answer.emp === 'Manager') {
+            if (answer.type === 'Manager') {
                 makeManger();
             }
-            if (answer.emp === 'Engineer') {
+            if (answer.type === 'Engineer') {
                 makeEngineer();
             }
-            if (answer.emp === 'Intern') {
+            if (answer.type === 'Intern') {
                 makeIntern();
             }
         })
@@ -56,6 +56,8 @@ const makeManger = () => {
             fs.appendFile('./dist/team.html', manager.managerHtml(answers.name, answers.id, answers.email, answers.officeNumber), function (err) {
                 if (err) throw err;
             })
+            addMore();
+
         }
         )
 }
@@ -88,6 +90,7 @@ const makeEngineer = () => {
         fs.appendFile('./dist/team.html', engineer.engineerHtml(answers.name, answers.id, answers.email, answers.GitHub), function (err) {
             if (err) throw err;
         })
+        addMore();
     }
     )
 }
@@ -120,17 +123,29 @@ const makeIntern = () => {
         fs.appendFile('./dist/team.html', intern.internHtml(answers.name, answers.id, answers.email, answers.school), function (err) {
             if (err) throw err;
         })
+        addMore();
     }
     )
 }
 
 
 
-
 // at the end to add more employees or stop program
 const addMore = () => {
-
-    empChoice();
+    const prompt = inquirer.createPromptModule();
+    prompt([
+        {
+            type: 'list',
+            message: 'Would you like to add another employee?',
+            choices: ['yes', 'no'],
+            name: 'select'
+        }])
+        .then((answer) => {
+            if (answer.select === 'yes') {
+                empChoice();
+            }
+            
+        })
 }
 
 empChoice();
