@@ -82,12 +82,14 @@ const makeEngineer = () => {
             name: 'GitHub'
         },
     ])
-        .then((name, id, email, GitHub) => {
-            const engineer = new Engineer(name, id, email, GitHub)
-            engineer.engineerHtml;
+    .then((answers) => {
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.GitHub)
 
-        }
-        )
+        fs.appendFile('./dist/team.html', engineer.engineerHtml(answers.name, answers.id, answers.email, answers.GitHub), function (err) {
+            if (err) throw err;
+        })
+    }
+    )
 }
 // make Intern
 const makeIntern = () => {
@@ -112,12 +114,14 @@ const makeIntern = () => {
             name: 'school'
         },
     ])
-        .then((name, id, email, school) => {
-            const intern = new Intern(name, id, email, school)
-            intern.internHtml;
+    .then((answers) => {
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
 
-        }
-        )
+        fs.appendFile('./dist/team.html', intern.internHtml(answers.name, answers.id, answers.email, answers.school), function (err) {
+            if (err) throw err;
+        })
+    }
+    )
 }
 
 
