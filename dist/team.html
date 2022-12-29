@@ -10,6 +10,7 @@
     <title>MY TEAM</title>
     <style>
         body {
+            color: rgb(250, 218, 176);
             background-color: antiquewhite;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -17,8 +18,13 @@
         .navbar {
             background-color: #5475E3;
         }
+        span{
+            position: relative;
+            top: 20px;
+        }
 
         .card {
+            color: rgb(90, 64, 48);
             background-color: #b2da84;
             border-bottom-right-radius: 20%;
             border-bottom-left-radius: 20%;
@@ -55,13 +61,19 @@
             margin: 2px;
             border-radius: 8px;
         }
+
+        a:hover {
+            color: #5475E3;
+            background-color: rgb(248, 246, 243);
+
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="container-fluid display-flex justify-content-center">
-            <span class="navbar mb-5 h1 ">Team Members</span>
+            <span class="navbar mb-5 h1">Team Members</span>
         </div>
     </nav>
 
