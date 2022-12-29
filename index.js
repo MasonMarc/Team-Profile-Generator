@@ -10,14 +10,11 @@ let empChoice = () => {
     prompt([
         {
             type: 'list',
-            message: 'Please Select Employee type',
-            choices: ['Manager', 'Engineer', 'Intern'],
+            message: 'Please Select Employee type to add',
+            choices: ['Engineer', 'Intern'],
             name: 'type'
         }])
         .then((answer) => {
-            if (answer.type === 'Manager') {
-                makeManger();
-            }
             if (answer.type === 'Engineer') {
                 makeEngineer();
             }
@@ -29,24 +26,22 @@ let empChoice = () => {
 
 // make Manager
 const makeManger = () => {
-    console.log('here is a manager');
-
     const prompt = inquirer.createPromptModule();
     prompt([
         {
-            message: 'Please enter employee name',
+            message: 'Please enter name of manager',
             name: 'name',
         },
         {
-            message: 'Please enter employee id Number',
+            message: 'Please enter employee id number of manager',
             name: 'id',
         },
         {
-            message: 'Please enter employee email',
+            message: 'Please enter email address of manager',
             name: 'email',
         },
         {
-            message: 'Please enter employee office number',
+            message: 'Please enter office number',
             name: 'officeNumber'
         },
     ])
@@ -56,8 +51,7 @@ const makeManger = () => {
             fs.appendFile('./dist/team.html', manager.managerHtml(answers.name, answers.id, answers.email, answers.officeNumber), function (err) {
                 if (err) throw err;
             })
-            addMore();
-
+            empChoice();
         }
         )
 }
@@ -153,4 +147,4 @@ const addMore = () => {
         })
 }
 
-empChoice();
+makeManger();
