@@ -144,6 +144,11 @@ const addMore = () => {
             if (answer.select === 'yes') {
                 empChoice();
             }
+            else if (answer.select === 'no'){
+                fs.appendFile('./dist/team.html', `<body><html>`,function (err) {
+                    if (err) throw err;
+                })
+            }
             
         })
 }
