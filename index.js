@@ -106,9 +106,31 @@ const makeEngineer = () => {
         .then((answers) => {
             const engineer = new Engineer(answers.name, answers.id, answers.email, answers.GitHub)
 
-            fs.appendFile('./dist/team.html', engineer.engineerHtml(answers.name, answers.id, answers.email, answers.GitHub),
-                function (error) {
-                    if (error) throw error;
+            fs.appendFile('./dist/team.html', engineer.engineerHtml(answers.name, answers.id, answers.email, answers.GitHub),function (error) {
+                if (answers.name === '' || typeof answers.name !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid name');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.id === '' || typeof answers.id !== 'number') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid id');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.email === '' || typeof answers.email !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid email');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.GitHub === '') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid GitHub name');
+                    console.log('--------------------------');
+                    throw error;
+                }
                 })
             addMore();
         }
@@ -141,8 +163,31 @@ const makeIntern = () => {
             const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
 
             fs.appendFile('./dist/team.html', intern.internHtml(answers.name, answers.id, answers.email, answers.school),
-                function (error) {
-                    if (error) throw error;
+            function (error) {
+                if (answers.name === '' || typeof answers.name !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid name');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.id === '' || typeof answers.id !== 'number') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid id');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.email === '' || typeof answers.email !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid email');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.school === '' || typeof answers.school !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid school name');
+                    console.log('--------------------------');
+                    throw error;
+                }
                 })
             addMore();
         }
