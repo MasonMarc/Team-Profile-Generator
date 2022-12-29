@@ -9,13 +9,52 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>MY TEAM</title>
     <style>
-        body{background-color: antiquewhite; font-family: Georgia, 'Times New Roman', Times, serif;}
-        .navbar{background-color: #5475E3;}
-        .card{background-color: #b2da84;}
-        .card-header{background-color: #9cbe76; display: flex;justify-content: center; flex-wrap: wrap;}
-        .btn{background-color: #5475E3;}
-        li{padding: 0.5em; font-size: 18px;}
-        em{font-size: 20px; background-color: #718a54; color: antiquewhite; display: flex; justify-content: center;}
+        body {
+            background-color: antiquewhite;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .navbar {
+            background-color: #5475E3;
+        }
+
+        .card {
+            background-color: #b2da84;
+            border-bottom-right-radius: 20%;
+            border-bottom-left-radius: 20%;
+        }
+
+        .card-header {
+            background-color: #9cbe76;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: #5475E3;
+        }
+
+        li {
+            padding: 0.5em;
+            font-size: 18px;
+        }
+
+        em {
+            font-size: 20px;
+            background-color: #718a54;
+            color: antiquewhite;
+            display: flex;
+            justify-content: center;
+        }
+
+        a {
+            background-color: #5475E3;
+            color: rgb(250, 243, 234);
+            padding: 0.3em;
+            margin: 2px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 
@@ -26,40 +65,41 @@
         </div>
     </nav>
 
-    <div class="row display-flex justify-content-center mt-4">
-        <article class="card col-2 m-3 p-2">
-            <h2 class="card-header">Mason Marcantel  </h2>
-            <em>manager</em>
-            <ul class="card-body">
-                <li class="card-text">ID: 12</li>
-                <li class="card-text">Email: <a href="mailto:masonmarcantel@gmail.com"
-                        class="btn btn-primary">masonmarcantel@gmail.com</a></li>
-                <li class="card-text">Office Number: 29</li>
-            </ul>
-        </article>
+    <div class="container-fluid">
+        <div class="row display-flex justify-content-center mt-4 ">
+            <article class="card col-md-3 col-sm-8 m-3 p-3">
+                <h2 class="card-header">Mason Marcantel </h2>
+                <em>manager</em>
+                <ul class="card-body">
+                    <li class="card-text">Employee ID: 12</li>
+                    <li class="card-text">Email: <a href="mailto:masonmarcantel@gmail.com">masonmarcantel@gmail.com</a>
+                    </li>
+                    <li class="card-text">Office Number: 29</li>
+                </ul>
+            </article>
 
-        <article class="card col-2 m-3 p-2">
-            <h2 class="card-header">Luiz Cortez</h2>
-            <em>engineer</em>
-            <ul class="card-body">
-                <li class="card-text">ID: 12</li>
-                <li class="card-text">Email: <a href="mailto:luiz@gmail.com" class="btn btn-primary">luiz@gmail.com</a>
-                </li>
-                <li class="card-text">GitHub: <a href="https://github.com/MasonMarc" target="_blank"
-                        class="btn btn-primary">MasonMarc</a></li>
-            </ul>
-        </article>
+            <article class="card col-md-3 col-sm-8 m-3 p-3">
+                <h2 class="card-header">Luiz Cortez</h2>
+                <em>engineer</em>
+                <ul class="card-body">
+                    <li class="card-text">Employee ID: 12</li>
+                    <li class="card-text">Email: <a href="mailto:luiz@gmail.com">luiz@gmail.com</a>
+                    </li>
+                    <li class="card-text">GitHub: <a href="https://github.com/MasonMarc" target="_blank">MasonMarc</a>
+                    </li>
+                </ul>
+            </article>
 
-        <article class="card col-2 m-3 p-2">
-            <h2 class="card-header">Intern Man</h2>
-            <em>intern</em>
-            <ul class="card-body">
-                <li class="card-text">ID: 02</li>
-                <li class="card-text">Email: <a href="mailto:Intern@rocketmail.com"
-                        class="btn btn-primary">Intern@rocketmail.com</a></li>
-                <li class="card-text">School: UNCC</li>
-            </ul>
-        </article>
+            <article class="card col-md-3 col-sm-8 m-3 p-3">
+                <h2 class="card-header">Intern Man</h2>
+                <em>intern</em>
+                <ul class="card-body">
+                    <li class="card-text">Employee ID: 02</li>
+                    <li class="card-text">Email: <a href="mailto:Intern@rocketmail.com">Intern@rocketmail.com</a></li>
+                    <li class="card-text">School: UNCC</li>
+                </ul>
+            </article>
+        </div>
     </div>
 
     <body>
