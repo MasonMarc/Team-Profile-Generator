@@ -48,9 +48,34 @@ const makeManger = () => {
         .then((answers) => {
             const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
 
-            fs.appendFile('./dist/team.html', manager.managerHtml(answers.name, answers.id, answers.email, answers.officeNumber), function (err) {
-                if (err) throw err;
+            fs.appendFile('./dist/team.html', manager.managerHtml(answers.name, answers.id, answers.email, answers.officeNumber),
+            function (error) {
+                if (answers.name === '' || typeof answers.name !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid name');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.id === '' || typeof answers.id !== 'number') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid id');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.email === '' || typeof answers.email !== 'string') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid email');
+                    console.log('--------------------------');
+                    throw error;
+                }
+                if (answers.officeNumber === '' || typeof answers.officeNumber !== 'number') {
+                    console.log('--------------------------');
+                    console.log('please enter a vaid office number');
+                    console.log('--------------------------');
+                    throw error;
+                }
             })
+                
             empChoice();
         }
         )
@@ -78,15 +103,16 @@ const makeEngineer = () => {
             name: 'GitHub'
         },
     ])
-    .then((answers) => {
-        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.GitHub)
+        .then((answers) => {
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.GitHub)
 
-        fs.appendFile('./dist/team.html', engineer.engineerHtml(answers.name, answers.id, answers.email, answers.GitHub), function (err) {
-            if (err) throw err;
-        })
-        addMore();
-    }
-    )
+            fs.appendFile('./dist/team.html', engineer.engineerHtml(answers.name, answers.id, answers.email, answers.GitHub),
+                function (error) {
+                    if (error) throw error;
+                })
+            addMore();
+        }
+        )
 }
 // make Intern
 const makeIntern = () => {
@@ -111,15 +137,16 @@ const makeIntern = () => {
             name: 'school'
         },
     ])
-    .then((answers) => {
-        const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
+        .then((answers) => {
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
 
-        fs.appendFile('./dist/team.html', intern.internHtml(answers.name, answers.id, answers.email, answers.school), function (err) {
-            if (err) throw err;
-        })
-        addMore();
-    }
-    )
+            fs.appendFile('./dist/team.html', intern.internHtml(answers.name, answers.id, answers.email, answers.school),
+                function (error) {
+                    if (error) throw error;
+                })
+            addMore();
+        }
+        )
 }
 
 
@@ -138,12 +165,12 @@ const addMore = () => {
             if (answer.select === 'yes') {
                 empChoice();
             }
-            else if (answer.select === 'no'){
-                fs.appendFile('./dist/team.html', `<body><html>`,function (err) {
-                    if (err) throw err;
+            else if (answer.select === 'no') {
+                fs.appendFile('./dist/team.html', `<body><html>`, function (error) {
+                    if (error) throw error;
                 })
             }
-            
+
         })
 }
 
