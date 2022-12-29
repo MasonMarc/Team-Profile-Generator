@@ -56,7 +56,7 @@ const makeManger = () => {
                     console.log('--------------------------');
                     throw error;
                 }
-                if (answers.id === '' || typeof answers.id !== 'number') {
+                if (answers.id === '' || typeof Number(answers.id) !== 'number') {
                     console.log('--------------------------');
                     console.log('please enter a vaid id');
                     console.log('--------------------------');
@@ -68,7 +68,7 @@ const makeManger = () => {
                     console.log('--------------------------');
                     throw error;
                 }
-                if (answers.officeNumber === '' || typeof answers.officeNumber !== 'number') {
+                if (answers.officeNumber === '' || typeof Number(answers.officeNumber) !== 'number') {
                     console.log('--------------------------');
                     console.log('please enter a vaid office number');
                     console.log('--------------------------');
@@ -113,7 +113,7 @@ const makeEngineer = () => {
                     console.log('--------------------------');
                     throw error;
                 }
-                if (answers.id === '' || typeof answers.id !== 'number') {
+                if (answers.id === '' || typeof Number(answers.id) !== 'number') {
                     console.log('--------------------------');
                     console.log('please enter a vaid id');
                     console.log('--------------------------');
@@ -170,7 +170,7 @@ const makeIntern = () => {
                     console.log('--------------------------');
                     throw error;
                 }
-                if (answers.id === '' || typeof answers.id !== 'number') {
+                if (answers.id === '' || typeof Number(answers.id) !== 'number') {
                     console.log('--------------------------');
                     console.log('please enter a vaid id');
                     console.log('--------------------------');
